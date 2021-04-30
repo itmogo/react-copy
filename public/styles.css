@@ -1,25 +1,36 @@
 .border{
     margin-top: 15px;
-    border: 10px solid #12dfee;    
+    border: 8px solid #778788;   
+    background-color: lightblue;
 }
 
-.background{
-    background-color: lightgray;
-    color: blue;
-    margin-top: 11px;
-    margin-left: 10px;
-    margin-right: 10px;  
 
-}
 
-h2{
+h4{
     text-align:left;
     color: navy;
     text-transform: uppercase;
 }
-h2:hover{
-   
+h4:hover{   
     color: brown;    
 }
+label{
+    font-size: 13px;
+}  
+    
+.down{
+    margin-top: 5px;
+    display: flex;
+    align-items:center;    
+}
+.padd{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+span{
+    font-weight: bold;
+}
 
-
+.back{
+    margin-right: 10px;
+}

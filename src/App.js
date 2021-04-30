@@ -3,11 +3,20 @@ import './App.css';
 import UsersForm from './Components/UsersForm';
 import UsersList from './Components/UsersList';
 import { useState} from 'react';
+import EditUserForm from './Components/EditUserForm';
 
 
 function App() {
 
   const [users, setUsers] = useState([]);
+  const [userTopUpdate, setUserToUpdate] = useState({
+
+    username: '',
+    email: '',
+    country: '',
+    telephone: '',
+    password:'',
+  });
   //this is a helper function that adds a new user to our users state
   //we later pass this function to userform component to be called anytime
   //we want to create a new user
@@ -16,6 +25,24 @@ function App() {
     setUsers([...users, user]);
   }
 
+  function deleteUser(id){
+    let newUsers = users.filter((user) => user.id !==id);
+    setUsers(newUsers);
+  }
+
+  function  updateUser (id, updatedUserInfo){
+    let newUsers = users.map((user) => {
+      if (user.id === id){
+        return updatedUserInfo;
+      }
+        return user;
+    })
+      setUsers(newUsers);
+  }
+
+ 
+
+  
   return (
     <div className="container border">
       <div className="row">
@@ -27,8 +54,12 @@ function App() {
         
         <div className="col-md-8">
           {/* we pass the users down to userlist component to be displayed */}
-          <UsersList allUsers={users} />
-          
+          <UsersList 
+          allUsers={users} 
+          updateUser={updateUser}
+          delete={deleteUser}
+
+          />          
         </div>
       </div>
       </div> 

@@ -1,13 +1,13 @@
 import React, { useState} from 'react';
 
-function UsersForm(props) 
+function EditUserForm(props) 
 {
     const [state, setState] = useState({
-        username: '',
-        email: '',
-        password: '',
-        country: '', 
-        telephone: '',
+        username: props.user.username,
+        email: props.user.email,
+        password: props.user.password,
+        country: props.user.country, 
+        telephone: props.user.telephone,
     });
 
     // a function called to handle onchange event
@@ -25,8 +25,11 @@ function UsersForm(props)
       function handleSubmit(){
         //calls adduser function passed to userform component 
         // as a property from App component
+         let user = {...state, id: props.user.id};
+         props.updateUser(props.user.id, user);
+         props.hideModal();
         
-          props.addUser(state);
+         // props.addUser(state);
       }
 
     return( <div>
@@ -117,4 +120,4 @@ function UsersForm(props)
     );
 
 }
-export default UsersForm;
+export default EditUserForm;

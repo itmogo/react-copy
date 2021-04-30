@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import UsersItems from './UsersItems';
+
 
 // component display all users in our state frin App js
 function UsersList (props){
@@ -13,7 +14,12 @@ function UsersList (props){
             <h2>Users List</h2>
             {/*loop all users*/}
             {props.allUsers.map((user) => (           
-               <UsersItems user={user} />
+               <UsersItems
+                    user={user}
+                    delete={props.delete}
+                    updateUser={props.updateUser}  
+                                       
+                />
             ))}
         </div>
          

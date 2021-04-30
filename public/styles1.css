@@ -1,0 +1,27 @@
+.border{
+    margin-top: 15px;
+    border: 10px solid #12dfee;    
+}
+
+.background{
+    background-color: lightgray;
+    color: blue;
+    margin-top: 11px;
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+h2{
+    text-align:left;
+    color: navy;
+    text-transform: uppercase;
+
+}
+h2:hover{   
+    color: brown;    
+}
+label{
+    font-size: 13px;
+}
+
+
